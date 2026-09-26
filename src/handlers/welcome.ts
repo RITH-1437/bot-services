@@ -149,6 +149,14 @@ export function createWelcomeHandler(deps: WelcomeDeps) {
 
           if (sent === null) return;
 
+          log.info("welcome message sent", {
+            chatId,
+            userId: user.id,
+            hasUsername: Boolean(user.username),
+            messageId: sent.message_id,
+            deleteInMs: config.welcome.deleteAfterMs,
+          });
+
           if (config.welcome.deleteAfterMs !== null) {
             scheduleDelete(telegram, chatId, sent.message_id, config.welcome.deleteAfterMs, log);
           }

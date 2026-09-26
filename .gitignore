@@ -7,6 +7,16 @@ coverage/
 .env.*
 !.env.example
 
+# Private keys and certificates — never commit
+*.pem
+*.key
+*.ppk
+*.p12
+*.pfx
+*.crt
+id_rsa*
+id_ed25519*
+
 *.log
 npm-debug.log*
 .DS_Store

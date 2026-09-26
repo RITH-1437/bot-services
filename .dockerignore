@@ -1,0 +1,19 @@
+# Secrets must never end up in an image layer.
+.env
+.env.*
+!.env.example
+
+node_modules
+dist
+coverage
+tests
+.git
+.gitignore
+.github
+.vscode
+.idea
+*.log
+*.tsbuildinfo
+Dockerfile
+docker-compose.yml
+README.md

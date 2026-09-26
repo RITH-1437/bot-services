@@ -1,0 +1,6 @@
+# Normalise line endings: LF in the repository, LF in Docker/Linux, native on Windows checkout.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary

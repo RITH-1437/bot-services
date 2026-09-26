@@ -1,0 +1,32 @@
+{
+  "name": "twbrothers-welcome-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Telegram group welcome bot: posts a public welcome message with a safe mention when new members join.",
+  "main": "dist/bot.js",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "tsx watch src/bot.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/bot.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "node --import tsx --test tests/**/*.test.ts",
+    "simulate": "tsx src/scripts/simulate.ts",
+    "bot:commands": "tsx src/scripts/setCommands.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.1",
+    "eslint": "^9.36.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.45.0"
+  }
+}

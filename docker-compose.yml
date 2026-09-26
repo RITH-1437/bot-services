@@ -1,0 +1,25 @@
+# Long-running Telegram bot. No database, no cache, no extra services.
+#
+#   cp .env.example .env      # then paste TELEGRAM_BOT_TOKEN into .env
+#   docker compose up -d --build
+#   docker compose logs -f
+#
+services:
+  bot:
+    build: .
+    image: twbrothers-welcome-bot:latest
+    container_name: twbrothers-welcome-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    # Only needed for RUN_MODE=webhook:
+    # ports:
+    #   - "3000:3000"
+    # healthcheck:
+    #   test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/health"]
+    #   interval: 60s
+    #   timeout: 5s
+    #   retries: 3
